@@ -1,0 +1,23 @@
+.info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    border: 2px solid #61dafb;
+    border-radius: 5px;
+    color: #61dafb;
+    font-size: 30px;
+}
+.error {
+    font-weight: bold;
+    color: red;
+    font-size: 20px;
+}
+.message {
+    font-size: 20px;
+}
+.numberMax {
+    font-weight: bold;
+    color: red;
+    font-size: 40px;
+}

@@ -1,0 +1,12 @@
+.App {
+    height: 100vh;
+    background-color: #282c34;
+    padding-top: 100px;
+}
+
+.wrapper {
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
