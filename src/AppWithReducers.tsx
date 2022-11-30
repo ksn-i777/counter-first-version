@@ -17,14 +17,18 @@ function App() {
     const [message, dispatchMessage] = useReducer(messageReducer, '')
 
     useEffect(() => {
-        const minLS = localStorage.getItem('minValue')
-        const maxLS = localStorage.getItem('maxValue')
+        const minLS = localStorage.getItem('counter 1 - min value')
+        const maxLS = localStorage.getItem('counter 1 - max value')
         let min, max
-        if (minLS) {min = JSON.parse(minLS)}
-        if (maxLS) {max = JSON.parse(maxLS)}
-        dispatchMinValue(minInputLocStorAC(min))
-        dispatchMaxValue(maxInputLocStorAC(max))
-        dispatchCount(resCounterAC(min))
+        if (minLS) {
+            min = JSON.parse(minLS)
+            dispatchMinValue(minInputLocStorAC(min))
+            dispatchCount(resCounterAC(min))
+        }
+        if (maxLS) {
+            max = JSON.parse(maxLS)
+            dispatchMaxValue(maxInputLocStorAC(max))
+        }
     }, [])
 
     function changeMinInput(value: number) {
@@ -44,8 +48,8 @@ function App() {
             dispatchMessage(notMessageAC())
             dispatchCount(resCounterAC(minValue))
         }
-        localStorage.setItem('minValue', JSON.stringify(minValue))
-        localStorage.setItem('maxValue', JSON.stringify(maxValue))
+        localStorage.setItem('counter 1 - min value', JSON.stringify(minValue))
+        localStorage.setItem('counter 1 - max value', JSON.stringify(maxValue))
     }
     
     function addCount() {
