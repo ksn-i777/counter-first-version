@@ -10,7 +10,7 @@ import { messageAC, notMessageAC } from './redux/infoMessage-reducer'
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from './redux/store';
 
-function App() {
+export function AppWithReduxStandard() {
 
     const dispatch = useDispatch()
     const minValue = useSelector<RootState, number>(s => s.minInput)
@@ -89,5 +89,3 @@ function App() {
         </div>
     );
 }
-
-export default App

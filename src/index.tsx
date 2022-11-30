@@ -3,9 +3,9 @@ import reportWebVitals from './reportWebVitals';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-//import App from './App';
-//import AppWithReducers from './AppWithReducers'
-import AppWithReduxStandard from './AppWithReduxStandard'
+import { App } from './App';
+import { AppWithReducers } from './AppWithReducers'
+import { AppWithReduxStandard } from './AppWithReduxStandard'
 import { store } from './redux/store'
 import { Provider } from 'react-redux';
 
@@ -14,7 +14,7 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <Provider store={store}>
-    <AppWithReduxStandard />
+    <AppWithReduxStandard/>
   </Provider>
 );
 
