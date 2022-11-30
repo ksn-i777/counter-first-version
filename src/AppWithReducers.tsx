@@ -16,24 +16,6 @@ function App() {
     const [error, dispatchError] = useReducer(errorReducer, '')
     const [message, dispatchMessage] = useReducer(messageReducer, '')
 
-    function changeMinInput(value: number) {
-        dispatchMessage(messageAC())
-        dispatchError(errorMinInputAC(value, minValue, maxValue))
-        dispatchMinValue(minInputAC(value))
-    }
-    function changeMaxInput(value: number) {
-        dispatchMessage(messageAC())
-        dispatchError(errorMaxInputAC(value, minValue, maxValue))
-        dispatchMaxValue(maxInputAC(value))
-    }
-    function setStartValue() {
-        if (!error) {
-            dispatchMessage(notMessageAC())
-            dispatchCount(resCounterAC(minValue))
-        }
-        localStorage.setItem('minValue', JSON.stringify(minValue))
-        localStorage.setItem('maxValue', JSON.stringify(maxValue))
-    }
     useEffect(() => {
         const minLS = localStorage.getItem('minValue')
         const maxLS = localStorage.getItem('maxValue')
@@ -44,12 +26,34 @@ function App() {
         dispatchMaxValue(maxInputLocStorAC(max))
         dispatchCount(resCounterAC(min))
     }, [])
+
+    function changeMinInput(value: number) {
+        dispatchMessage(messageAC())
+        dispatchError(errorMinInputAC(value, minValue, maxValue))
+        dispatchMinValue(minInputAC(value))
+    }
+    
+    function changeMaxInput(value: number) {
+        dispatchMessage(messageAC())
+        dispatchError(errorMaxInputAC(value, minValue, maxValue))
+        dispatchMaxValue(maxInputAC(value))
+    }
+
+    function setStartValue() {
+        if (!error) {
+            dispatchMessage(notMessageAC())
+            dispatchCount(resCounterAC(minValue))
+        }
+        localStorage.setItem('minValue', JSON.stringify(minValue))
+        localStorage.setItem('maxValue', JSON.stringify(maxValue))
+    }
     
     function addCount() {
-        count < maxValue && dispatchCount(incCounterAC())
+       dispatchCount(incCounterAC())
     }
+
     function resetCount() {
-        dispatchCount(resCounterAC(minValue))
+       dispatchCount(resCounterAC(minValue))
     }
 
     return (
