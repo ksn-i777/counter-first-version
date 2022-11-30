@@ -9,7 +9,7 @@ export type NotMessageActionType = {
 }
 export type MessageActionsType = MessageActionType | NotMessageActionType
 
-export function messageReducer(state:string, action:MessageActionsType):string {
+export function messageReducer(state:string = '', action:MessageActionsType):string {
     switch (action.type) {
         case MESSAGE:
             return "enter values and press 'set'"

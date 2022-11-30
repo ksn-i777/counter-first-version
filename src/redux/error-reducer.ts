@@ -15,7 +15,7 @@ export type ErrorMaxInputActionType = {
 }
 export type InputsErrorActionsType = ErrorMinInputActionType | ErrorMaxInputActionType
 
-export function errorReducer(state:string, action:InputsErrorActionsType):string {
+export function errorReducer(state:string = '', action:InputsErrorActionsType):string {
     switch (action.type) {
         case ERROR_OR_NOT_MIN:
             return action.value < 0 || action.value >= action.maxValue ? 'Incorrect value!' : ''

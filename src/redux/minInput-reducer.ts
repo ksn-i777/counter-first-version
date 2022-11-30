@@ -11,7 +11,7 @@ export type LocalStorageActionType = {
 }
 export type ActionsType = MinInputActionType | LocalStorageActionType
 
-export function minInputReducer(state:number, action:ActionsType):number {
+export function minInputReducer(state:number = 0, action:ActionsType):number {
     switch (action.type) {
         case CHANGE_MIN_INPUT:
             return action.value > state ? state + 1 : state - 1

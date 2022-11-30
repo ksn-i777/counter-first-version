@@ -11,7 +11,7 @@ export type LocalStorageActionType = {
 }
 export type ActionsType = MaxInputActionType | LocalStorageActionType
 
-export function maxInputReducer(state:number, action:ActionsType):number {
+export function maxInputReducer(state:number = 5, action:ActionsType):number {
     switch (action.type) {
         case CHANGE_MAX_INPUT:
             return action.value > state ? state + 1 : state - 1

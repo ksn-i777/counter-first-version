@@ -10,7 +10,7 @@ export type ResCounterActionType = {
 }
 export type CounterActionsType = IncCounterActionType | ResCounterActionType
 
-export function counterReducer(state:number, action:CounterActionsType):number {
+export function counterReducer(state:number = 0, action:CounterActionsType):number {
     switch (action.type) {
         case INC_COUNTER:
             return state + 1
